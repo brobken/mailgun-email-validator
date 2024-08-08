@@ -10,8 +10,8 @@
 # Log files
 *.log
 
-# htaccess
-/languages/trunk*
+/languages/trunk*.po
+/languages/trunk*.mo
 
 # All plugins
 #
