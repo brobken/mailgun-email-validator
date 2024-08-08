@@ -28,7 +28,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 
 			// Displayed if no API key is entered
 			if (! isset( $this->options['mailgun_pubkey_api'] ) || empty( $this->options['mailgun_pubkey_api'] )) {
-				echo '<div class="updated"><p>' . sprintf( __( 'The %s will not work until a %s is entered.', $email_validation_mailgun->slug), '<a href="' . admin_url( 'options-general.php?page=' . $email_validation_mailgun->slug ) . '">Mailgun Email Validator plugin</a>', 'Mailgun Public API key' ) . '</p></div>';
+				echo '<div class="notice notice-info is-dismissible"><p>' . sprintf( __( 'The %s will not work until a %s is entered.', $email_validation_mailgun->slug), '<a href="' . admin_url( 'options-general.php?page=' . $email_validation_mailgun->slug ) . '">Mailgun Email Validator plugin</a>', 'Mailgun Public API key' ) . '</p></div>';
 			}
 		}
 
@@ -77,7 +77,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 			global $email_validation_mailgun;
 
 			$args = array(
-				'sslverify' => false,
+				'sslverify' => true,
 				'headers' => array('Authorization' => 'Basic ' . base64_encode("api:" . $_POST['api'])),
 			);
 
@@ -97,6 +97,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 			} elseif ( '200' == $response['response']['code'] ) {
 				// Display success message
 				echo '<span style="color:green">' . __( 'API Key is valid', $email_validation_mailgun->slug ) . '</span>';
+				exit;
 			} elseif ( '401' == $response['response']['code'] ) {
 				// Invalid API as Mailgun returned 401 Unauthorized
 				echo '<span style="color:red">' . sprintf( __( 'Invalid API Key. Error code: %s %s', $email_validation_mailgun->slug ), $response['response']['code'], $response['response']['message'] ) . '</span>';
@@ -123,7 +124,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 			}
 
 			$args = array(
-				'sslverify' => false,
+				'sslverify' => true,
 				'headers' => array('Authorization' => 'Basic ' . base64_encode( "api:" . $this->options['mailgun_pubkey_api'] ) ),
 			);
 			$response = wp_remote_request( "https://api.mailgun.net/v4/address/validate?address=" . urlencode( $_POST['email_id'] ), $args );
@@ -170,7 +171,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 			global $email_validation_mailgun;
 
 			$api_key = ( ( isset( $this->options['mailgun_pubkey_api'] ) && ! empty( $this->options['mailgun_pubkey_api'] ) ) ? $this->options['mailgun_pubkey_api'] : '' );
-			echo '<input class="regular_text code" id="mailgun_pubkey_api" name="jesin_mailgun_email_validator[mailgun_pubkey_api]" size="40" type="password" value="' . $api_key . '" required />
+			echo '<input class="regular_text code" id="mailgun_pubkey_api" name="jesin_mailgun_email_validator[mailgun_pubkey_api]" size="40" type="password" value="' . $api_key . '" required autocomplete="off" />
 				<input id="mailgun_api_verify" class="button button-secondary" type="button" value="Verify API Key" /><br />
 				<div id="api_output"></div>
 				<p class="description">' . sprintf( __( 'Enter your Mailgun Public API key which is shown at the left under %s after you %slogin%s', $email_validation_mailgun->slug ), '<strong>Account Information</strong>', '<a href="https://mailgun.com/sessions/new">', '</a>' ) . '</p>';
