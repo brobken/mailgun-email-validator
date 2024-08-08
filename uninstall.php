@@ -1,6 +1,6 @@
 <?php
 // if we're not uninstalling..
-if( !defined( 'WP_UNINSTALL_PLUGIN' ) )
+if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
 	exit();
 
 // clean up..

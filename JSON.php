@@ -27,7 +27,7 @@ var $_mb_substr = false;
 var $_mb_convert_encoding = false;
 function utf162utf8($utf16)
 {
-if($this->_mb_convert_encoding) {
+if ($this->_mb_convert_encoding) {
 return mb_convert_encoding($utf16, 'UTF-8', 'UTF-16');
 }
 $bytes = (ord($utf16{0}) << 8) | ord($utf16{1});
@@ -46,7 +46,7 @@ return '';
 }
 function utf82utf16($utf8)
 {
-if($this->_mb_convert_encoding) {
+if ($this->_mb_convert_encoding) {
 return mb_convert_encoding($utf8, 'UTF-16', 'UTF-8');
 }
 switch($this->strlen8($utf8)) {
@@ -196,7 +196,7 @@ $properties = array_map(array($this, 'name_value'),
 array_keys($var),
 array_values($var));
 foreach($properties as $property) {
-if(Services_JSON::isError($property)) {
+if (Services_JSON::isError($property)) {
 return $property;
 }
 }
@@ -204,7 +204,7 @@ return '{' . join(',', $properties) . '}';
 }
 $elements = array_map(array($this, '_encode'), $var);
 foreach($elements as $element) {
-if(Services_JSON::isError($element)) {
+if (Services_JSON::isError($element)) {
 return $element;
 }
 }
@@ -225,7 +225,7 @@ $properties = array_map(array($this, 'name_value'),
 array_keys($vars),
 array_values($vars));
 foreach($properties as $property) {
-if(Services_JSON::isError($property)) {
+if (Services_JSON::isError($property)) {
 return $property;
 }
 }
@@ -239,7 +239,7 @@ return ($this->use & SERVICES_JSON_SUPPRESS_ERRORS)
 function name_value($name, $value)
 {
 $encoded_value = $this->_encode($value);
-if(Services_JSON::isError($encoded_value)) {
+if (Services_JSON::isError($encoded_value)) {
 return $encoded_value;
 }
 return $this->_encode(strval($name)) . ':' . $encoded_value;

@@ -2,8 +2,8 @@
 Contributors: jesin
 Tags: email validation, comments, spam, validation, anti-spam, contact form 7, jetpack, grunion, contact form
 Requires at least: 3.1.0
-Tested up to: 4.7
-Stable tag: 1.2.3
+Tested up to: 6.6.1
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ So `user.name.abc@yahoo.com` perfectly passes the [is_email()](http://codex.word
 * Ensures that the commenting process is uninterrupted even if Mailgun suffers a [downtime](http://status.mailgun.com)
 * Works completely transparent, nothing changes in the frontend
 
-This plugin requires a Mailgun Public API Key which can be obtained through a free [sign-up at Mailgun](https://mailgun.com/signup)(No credit card required).
+This plugin requires a Mailgun Public API Key which can be obtained by [signing up at Mailgun](https://mailgun.com/signup).
 
 If you're trying out this plugin on a local WAMP/LAMP/MAMP installation make sure your system is connected to the Internet for this plugin to contact Mailgun.
 
@@ -44,14 +44,14 @@ Read about Mailgun's email validation service.
 * <http://blog.mailgun.com/post/free-email-validation-api-for-web-forms/>
 * <http://blog.mailgun.com/post/weekly-product-update-improvements-to-email-validation-api/>
 * [Mailgun Address Validator demo](http://mailgun.github.io/validator-demo/) and its [source code](https://github.com/mailgun/validator-demo/tree/gh-pages)
-* The [Mailgun Email Validator Plugin](http://websistent.com/wordpress-plugins/mailgun-email-validator/) official homepage.
+* The [Mailgun Email Validator Plugin](https://websistent.com/wordpress-plugins/mailgun-email-validator/) official homepage.
 
 == Installation ==
 
 1. Unzip and upload the `mailgun-email-validator` folder to the `/wp-content/plugins/` directory.
 2. Activate the <strong>Mailgun Email Validator</strong> plugin through the 'Plugins' menu in WordPress.
 3. Configure the plugin by going to `General > Email Validation` page.
-4. [Signup](https://mailgun.com/signup) for a Mailgun account (it is completely free no credit card required).
+4. [Signup](https://mailgun.com/signup) for a Mailgun account (First 100 validations are free every month).
 5. [Login](https://mailgun.com/sessions/new), copy and paste your public API key to `General > Email Validation` page.
 
 == Frequently Asked Questions ==
@@ -59,7 +59,7 @@ Read about Mailgun's email validation service.
 = Why did you create this plugin? =
 I hate comment spam because it bloats my database. I also don't like bugging my visitors with CAPTCHAs in the form of scribbled text, 
 counting the puppies and answering questions like *What is 3 + 2?*
-So when Mailgun released their email validation service I tried validating the email addresses of comments in the spam queue of [my blog](http://websistent.com).
+So when Mailgun released their email validation service I tried validating the email addresses of comments in the spam queue of [my blog](https://websistent.com).
 I found that nearly 50% of these email addresses were identified incorrect by Mailgun. 
 Thus this plugin was born. Though not as effective as CAPTCHAs this plugin can prevent a decent amount of spam while maintaining user experience.
 
@@ -88,6 +88,20 @@ by choosing the **Support** tab of this plugin. If you directly create a thread 
 Mailgun has created a [jquery demo](http://mailgun.github.io/validator-demo/) at this page. The code for this demo is [available here](https://github.com/mailgun/validator-demo/tree/gh-pages).
 
 == Changelog ==
+
+= 1.2.5 =
+* 8th August 2024
+* Styling updates
+* Compatibility Checks
+* Added Dutch (BE) translation
+
+= 1.2.4.1 =
+* 19th October 2017
+* Add global variables $pagenow and $wp
+
+= 1.2.4 =
+* 8th October 2017
+* Don't use Mailgun validation on the WooCommerce WP-Admin orders page. [More details...](https://wordpress.org/support/topic/is_email-function-happens-a-lot/)
 
 = 1.2.3 =
 * 16th October 2016
