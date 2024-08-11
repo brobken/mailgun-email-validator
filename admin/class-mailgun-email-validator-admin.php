@@ -146,6 +146,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 				// Display success message
 				if ( $result['result'] === "deliverable" ) {
 					echo '<span style="color:green">' . __( 'Address is valid', $email_validation_mailgun->slug ) . '</span>';
+					exit;
 				} else {
 					echo '<span style="color:red">' . __( 'Address is invalid', $email_validation_mailgun->slug ) . '</span>';
 				}
@@ -171,10 +172,10 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 			global $email_validation_mailgun;
 
 			$api_key = ( ( isset( $this->options['mailgun_pubkey_api'] ) && ! empty( $this->options['mailgun_pubkey_api'] ) ) ? $this->options['mailgun_pubkey_api'] : '' );
-			echo '<input class="regular_text code" id="mailgun_pubkey_api" name="jesin_mailgun_email_validator[mailgun_pubkey_api]" size="40" type="password" value="' . $api_key . '" required autocomplete="off" />
+			echo '<input class="regular_text code" id="mailgun_pubkey_api" name="jesin_mailgun_email_validator[mailgun_pubkey_api]" size="40" type="password" value="' . $api_key . '" autocomplete="off" />
 				<input id="mailgun_api_verify" class="button button-secondary" type="button" value="Verify API Key" /><br />
 				<div id="api_output"></div>
-				<p class="description">' . sprintf( __( 'Enter your Mailgun Public API key which is shown at the left under %s after you %slogin%s', $email_validation_mailgun->slug ), '<strong>Account Information</strong>', '<a href="https://mailgun.com/sessions/new">', '</a>' ) . '</p>';
+				<p class="description">' . sprintf( __( 'Enter your Mailgun Public API key which can be generated at this %sURL%s.', $email_validation_mailgun->slug ), '<a href="https://app.mailgun.com/settings/api_security">', '</a>' ) . '</p>';
 		}
 
 		// HTML of the plugin options page
@@ -186,7 +187,7 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 					<?php _e( 'Email Validation Settings', $email_validation_mailgun->slug ); ?>
 				</h1>
 				<p>
-					<?php printf( __( 'This plugin requires a Mailgun account which is totally free. %sSignup for a free account%s', $email_validation_mailgun->slug ), '<a href="https://mailgun.com/signup" target="_blank">', '</a>' ); ?>
+					<?php printf( __( 'This plugin requires a Mailgun account which is totally free. %sSignup for a free account%s', $email_validation_mailgun->slug ), '<a href="https://signup.mailgun.com/new/signup" target="_blank">', '</a>' ); ?>
 				</p>
 				<form method="post" action="options.php">
 					<?php
@@ -196,18 +197,19 @@ if ( ! class_exists('Email_Validation_Mailgun_Admin') ) {
 					?>
 				</form>
 				<?php if ( isset( $this->options['mailgun_pubkey_api'] ) && ! empty( $this->options['mailgun_pubkey_api'] ) ) : ?>
-				<div>
+				<div class="wrap wrap-me">
 					<h2 class="title">
 						<?php _e( 'Email Validation Demo', $email_validation_mailgun->slug ); ?>
 					</h2>
 					<p>
 						<?php _e( 'You can use this form to see how mailgun validates email addresses.', $email_validation_mailgun->slug ); ?>
 					</p>
-					<label for="sample_email">Email:</label><input style="margin-left: 20px" class="regular_text code" type="text" id="sample_email" size="40" />
+					<label for="sample_email">Email:</label>
+					<input class="regular_text code" type="text" id="sample_email" size="40" />
 					<input type="button" class="button button-secondary" id="validate_email" value="Validate Email" />
 					<div id="email_output" style="font-size:20px;padding:10px 0 0 50px"></div>
 					<div>
-						<p style="font-size:24px"><?php printf( __( 'If you find this plugin useful please consider giving it a %sfive star%s rating.', $email_validation_mailgun->slug ), '<a href="http://wordpress.org/support/view/plugin-reviews/' . $email_validation_mailgun->slug . '?rate=5#postform" target="_blank">', '</a>' ); ?></p>
+						<p style="font-size:24px"><?php printf( __( 'If you find this plugin useful please consider giving it a %sfive star%s rating.', $email_validation_mailgun->slug ), '<a href="https://wordpress.org/support/plugin/mailgun-email-validator/reviews/#new-post" target="_blank">', '</a>' ); ?></p>
 					</div>
 				<?php endif; ?>
 				</div>

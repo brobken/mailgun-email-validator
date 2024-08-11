@@ -1,112 +1,106 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Mailgun Email Validator v1.1\n"
-"POT-Creation-Date: 2013-11-03 16:06+0530\n"
-"PO-Revision-Date: 2024-08-07 23:22+0200\n"
-"Language-Team: Jesin <me@jesin.in>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Mailgun Email Validator\n"
+"POT-Creation-Date: 2024-08-11 20:13+0200\n"
+"PO-Revision-Date: 2024-08-11 20:16+0200\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.3\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: mailgun-email-validator.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Last-Translator: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: nl_BE\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: ../admin_options.php:23
+#: admin/class-mailgun-email-validator-admin.php:31
 #, php-format
 msgid "The %s will not work until a %s is entered."
 msgstr "De %s werkt pas als er een %s is ingevoerd."
 
-#: ../admin_options.php:29
+#: admin/class-mailgun-email-validator-admin.php:39
 msgid "Settings"
 msgstr "Instellingen"
 
-#: ../admin_options.php:30
+#: admin/class-mailgun-email-validator-admin.php:40
 #, php-format
 msgid "More Plugins by %s"
 msgstr "Meer plug-ins van %s"
 
-#: ../admin_options.php:30
+#: admin/class-mailgun-email-validator-admin.php:40
 msgid "More Plugins"
 msgstr "Meer plug-ins"
 
-#: ../admin_options.php:39 ../admin_options.php:249
+#: admin/class-mailgun-email-validator-admin.php:50
+#: admin/class-mailgun-email-validator-admin.php:187
 msgid "Email Validation Settings"
 msgstr "Instellingen voor e-mailvalidatie"
 
-#: ../admin_options.php:39
+#: admin/class-mailgun-email-validator-admin.php:50
 msgid "Email Validation"
 msgstr "E-mail validatie"
 
-#: ../admin_options.php:72
-msgid "This field cannot be empty"
-msgstr "Dit veld mag niet leeg zijn"
-
-#: ../admin_options.php:81 ../admin_options.php:105
-msgid "Checking"
-msgstr "Controleren"
-
-#: ../admin_options.php:97
-msgid "Please enter an email address to validate"
-msgstr "Voer een e-mailadres in om te valideren"
-
-#: ../admin_options.php:140
+#: admin/class-mailgun-email-validator-admin.php:93
 msgid "The following error occurred when validating the key."
 msgstr "De volgende fout is opgetreden bij het valideren van de sleutel."
 
-#: ../admin_options.php:147
+#: admin/class-mailgun-email-validator-admin.php:99
 msgid "API Key is valid"
 msgstr "API-sleutel is geldig"
 
-#: ../admin_options.php:151
+#: admin/class-mailgun-email-validator-admin.php:103
 #, php-format
 msgid "Invalid API Key. Error code: %s %s"
 msgstr "Ongeldige API-sleutel. Foutcode: %s %s"
 
-#: ../admin_options.php:155
+#: admin/class-mailgun-email-validator-admin.php:106
 #, php-format
 msgid "A HTTP error occurred when validating the API. Error code: %s %s"
 msgstr ""
 "Er is een HTTP-fout opgetreden bij het valideren van de API. Foutcode: %s %s"
 
-#: ../admin_options.php:167
+#: admin/class-mailgun-email-validator-admin.php:116
 msgid "The format of the email address is invalid."
 msgstr "De indeling van het e-mailadres is ongeldig."
 
-#: ../admin_options.php:174
+#: admin/class-mailgun-email-validator-admin.php:122
 msgid "Please enter a Mailgun Public API and click Save Settings."
 msgstr "Voer een Mailgun Public API in en klik op Instellingen opslaan."
 
-#: ../admin_options.php:196
+#: admin/class-mailgun-email-validator-admin.php:141
 msgid "The following error occured"
 msgstr "De volgende fout is opgetreden"
 
-#: ../admin_options.php:205
+#: admin/class-mailgun-email-validator-admin.php:148
 msgid "Address is valid"
 msgstr "Adres is geldig"
 
-#: ../admin_options.php:207
+#: admin/class-mailgun-email-validator-admin.php:151
 msgid "Address is invalid"
 msgstr "Adres is ongeldig"
 
-#: ../admin_options.php:212
+#: admin/class-mailgun-email-validator-admin.php:155
 #, php-format
 msgid "Invalid API Key.%sError code: %s %s"
 msgstr "Ongeldige API-sleutel. %s Foutcode: %s %s"
 
-#: ../admin_options.php:239
-#, php-format
+#: admin/class-mailgun-email-validator-admin.php:178
+#, fuzzy, php-format
 msgid ""
-"Enter your Mailgun Public API key which is shown at the left under %s after "
-"you %slogin%s"
+"Enter your Mailgun Public API key which can be generated at this %sURL%s."
 msgstr ""
-"Voer uw Mailgun Public API-sleutel in die links onder %s wordt weergegeven "
-"nadat u %sinlogt%s"
+"Voer uw Mailgun Public API-sleutel in die kan worden gegenereerd op deze "
+"%sURL%s."
 
-#: ../admin_options.php:250
+#: admin/class-mailgun-email-validator-admin.php:190
 #, php-format
 msgid ""
 "This plugin requires a Mailgun account which is totally free. %sSignup for a "
@@ -115,17 +109,17 @@ msgstr ""
 "Deze plug-in vereist een Mailgun-account dat volledig gratis is. %s Meld u "
 "aan voor een gratis account%s"
 
-#: ../admin_options.php:257
+#: admin/class-mailgun-email-validator-admin.php:202
 msgid "Email Validation Demo"
 msgstr "Demo e-mailvalidatie"
 
-#: ../admin_options.php:258
+#: admin/class-mailgun-email-validator-admin.php:205
 msgid "You can use this form to see how mailgun validates email addresses."
 msgstr ""
 "U kunt dit formulier gebruiken om te zien hoe Mailgun e-mailadressen "
 "valideert."
 
-#: ../admin_options.php:262
+#: admin/class-mailgun-email-validator-admin.php:212
 #, php-format
 msgid ""
 "If you find this plugin useful please consider giving it a %sfive star%s "
@@ -133,3 +127,32 @@ msgid ""
 msgstr ""
 "Als je deze plug-in nuttig vindt, overweeg dan om deze een beoordeling van "
 "%sfive star%s te geven."
+
+#. Plugin Name of the plugin/theme
+msgid "Mailgun Email Validator"
+msgstr "Mailgun E-mail validator"
+
+#. Plugin URI of the plugin/theme
+msgid "https://websistent.com/wordpress-plugins/mailgun-email-validator/"
+msgstr "https://websistent.com/wordpress-plugins/mailgun-email-validator/"
+
+#. Description of the plugin/theme
+msgid ""
+"Kick spam with an highly advanced email validation in comment forms, user "
+"registration forms and contact forms using <a href=\"http://blog.mailgun.com/"
+"post/free-email-validation-api-for-web-forms/\" target=\"_blank\">Mailgun's "
+"Email validation</a> service."
+msgstr ""
+"Verminder spam met een zeer geavanceerde e-mailvalidatie in "
+"reactieformulieren, gebruikersregistratieformulieren en contactformulieren "
+"met behulp <a href=\"http://blog.mailgun.com/post/free-email-validation-api-"
+"for-web-forms/\" target=\"_blank\">van de e-mailvalidatieservice van "
+"Mailgun</a> ."
+
+#. Author of the plugin/theme
+msgid "Jesin"
+msgstr "Jesin"
+
+#. Author URI of the plugin/theme
+msgid "https://websistent.com/"
+msgstr "https://websistent.com/"

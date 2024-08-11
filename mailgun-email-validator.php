@@ -7,6 +7,8 @@ Author: Jesin
 Version: 2.0
 Requires PHP: 5.6
 Author URI: https://websistent.com/
+Text Domain: mailgun-email-validator
+Domain Path: /languages
 */
 
 if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
@@ -30,6 +32,9 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 
 			// Add a filter to validate email addresses with Mailgun
 			add_filter( 'is_email', array( $this, 'validate_email' ) );
+
+			// Load our CSS
+			wp_enqueue_style( $this->slug, plugin_dir_url(__FILE__) . '/admin/css/mailgun-email-validator-admin.css', array(), '' , 'all' );
 		}
 
 		// Function which sends the email to Mailgun to check it
@@ -75,5 +80,6 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 }
 
 if ( is_admin() ) {
-	require_once  plugin_dir_path( __FILE__ ). 'admin/class-email-validation-mg-admin.php';
+	
+	require_once  plugin_dir_path( __FILE__ ) . '/admin/class-mailgun-email-validator-admin.php';
 }
